@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificación de aves</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="text-center">
+            <h1>Identificación de Imágenes</h1>
+            <h3>y algunas aves</h3>
+            <button id="modeToggle" class="btn btn-secondary" onclick="toggleMode()">Modo Oscuro/Claro</button>
+        </header>
+        <div class="upload-section text-center mt-4">
+            <h2>Paso 1. Subir Imagen</h2>
+            <input type="file" id="imageUpload" accept="image/*" class="form-control">
+            <img id="imagePreview" class="img-thumbnail mt-3" style="max-height: 200px; display: none;">
+        </div>
+        <div class="description-section text-center mt-4">
+            <input type="text" id="imageDescription" class="form-control" placeholder="Añadir una descripción de la imagen">
+        </div>
+        <div class="identify-section text-center mt-4">
+            <h2>Paso 2. Identificar</h2>
+            <button class="btn btn-primary" onclick="predict()">Identificar</button>
+        </div>
+        <div class="result-section mt-4">
+            <div id="result"></div>
+            <canvas id="canvas"></canvas>
+        </div>
+        <footer class="text-center mt-4">
+            <p>Luis Tobar  |  2024</p>
+        </footer>
+    </div>
+    <script src="sketch.js"></script>
+</body>
+
+</html>
